@@ -2,12 +2,10 @@
 -- PostgreSQL database dump
 --
 
-\restrict H97ueOzshHzI09CzRKmB4ZXKXAGtBMCQd49AuOskaNIvJnAVzZ5qMZiHdAk7xvJ
+\restrict 1W2elJfStiJzzvVY3YT9uR3oiCUIDG9dAe7LLBqlRDZ7zVQ6imjiM9eUqJb59nl
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
-
--- Started on 2025-08-26 14:00:38
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -26,7 +24,6 @@ SET default_tablespace = '';
 SET default_table_access_method = heap;
 
 --
--- TOC entry 223 (class 1259 OID 24610)
 -- Name: cache; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -40,7 +37,6 @@ CREATE TABLE public.cache (
 ALTER TABLE public.cache OWNER TO postgres;
 
 --
--- TOC entry 224 (class 1259 OID 24617)
 -- Name: cache_locks; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -54,7 +50,6 @@ CREATE TABLE public.cache_locks (
 ALTER TABLE public.cache_locks OWNER TO postgres;
 
 --
--- TOC entry 229 (class 1259 OID 24642)
 -- Name: failed_jobs; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -72,7 +67,6 @@ CREATE TABLE public.failed_jobs (
 ALTER TABLE public.failed_jobs OWNER TO postgres;
 
 --
--- TOC entry 228 (class 1259 OID 24641)
 -- Name: failed_jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -87,8 +81,6 @@ CREATE SEQUENCE public.failed_jobs_id_seq
 ALTER SEQUENCE public.failed_jobs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4869 (class 0 OID 0)
--- Dependencies: 228
 -- Name: failed_jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -96,7 +88,6 @@ ALTER SEQUENCE public.failed_jobs_id_seq OWNED BY public.failed_jobs.id;
 
 
 --
--- TOC entry 227 (class 1259 OID 24634)
 -- Name: job_batches; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -117,7 +108,6 @@ CREATE TABLE public.job_batches (
 ALTER TABLE public.job_batches OWNER TO postgres;
 
 --
--- TOC entry 226 (class 1259 OID 24625)
 -- Name: jobs; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -135,7 +125,6 @@ CREATE TABLE public.jobs (
 ALTER TABLE public.jobs OWNER TO postgres;
 
 --
--- TOC entry 225 (class 1259 OID 24624)
 -- Name: jobs_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -150,8 +139,6 @@ CREATE SEQUENCE public.jobs_id_seq
 ALTER SEQUENCE public.jobs_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4870 (class 0 OID 0)
--- Dependencies: 225
 -- Name: jobs_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -159,7 +146,6 @@ ALTER SEQUENCE public.jobs_id_seq OWNED BY public.jobs.id;
 
 
 --
--- TOC entry 218 (class 1259 OID 24577)
 -- Name: migrations; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -173,7 +159,6 @@ CREATE TABLE public.migrations (
 ALTER TABLE public.migrations OWNER TO postgres;
 
 --
--- TOC entry 217 (class 1259 OID 24576)
 -- Name: migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -189,8 +174,6 @@ CREATE SEQUENCE public.migrations_id_seq
 ALTER SEQUENCE public.migrations_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4871 (class 0 OID 0)
--- Dependencies: 217
 -- Name: migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -198,7 +181,6 @@ ALTER SEQUENCE public.migrations_id_seq OWNED BY public.migrations.id;
 
 
 --
--- TOC entry 221 (class 1259 OID 24594)
 -- Name: password_reset_tokens; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -212,7 +194,6 @@ CREATE TABLE public.password_reset_tokens (
 ALTER TABLE public.password_reset_tokens OWNER TO postgres;
 
 --
--- TOC entry 222 (class 1259 OID 24601)
 -- Name: sessions; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -229,7 +210,6 @@ CREATE TABLE public.sessions (
 ALTER TABLE public.sessions OWNER TO postgres;
 
 --
--- TOC entry 220 (class 1259 OID 24584)
 -- Name: users; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -248,7 +228,6 @@ CREATE TABLE public.users (
 ALTER TABLE public.users OWNER TO postgres;
 
 --
--- TOC entry 219 (class 1259 OID 24583)
 -- Name: users_id_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -263,8 +242,6 @@ CREATE SEQUENCE public.users_id_seq
 ALTER SEQUENCE public.users_id_seq OWNER TO postgres;
 
 --
--- TOC entry 4872 (class 0 OID 0)
--- Dependencies: 219
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
@@ -272,7 +249,6 @@ ALTER SEQUENCE public.users_id_seq OWNED BY public.users.id;
 
 
 --
--- TOC entry 4679 (class 2604 OID 24645)
 -- Name: failed_jobs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -280,7 +256,6 @@ ALTER TABLE ONLY public.failed_jobs ALTER COLUMN id SET DEFAULT nextval('public.
 
 
 --
--- TOC entry 4678 (class 2604 OID 24628)
 -- Name: jobs id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -288,7 +263,6 @@ ALTER TABLE ONLY public.jobs ALTER COLUMN id SET DEFAULT nextval('public.jobs_id
 
 
 --
--- TOC entry 4676 (class 2604 OID 24580)
 -- Name: migrations id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -296,7 +270,6 @@ ALTER TABLE ONLY public.migrations ALTER COLUMN id SET DEFAULT nextval('public.m
 
 
 --
--- TOC entry 4677 (class 2604 OID 24587)
 -- Name: users id; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -304,8 +277,6 @@ ALTER TABLE ONLY public.users ALTER COLUMN id SET DEFAULT nextval('public.users_
 
 
 --
--- TOC entry 4857 (class 0 OID 24610)
--- Dependencies: 223
 -- Data for Name: cache; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -314,8 +285,6 @@ COPY public.cache (key, value, expiration) FROM stdin;
 
 
 --
--- TOC entry 4858 (class 0 OID 24617)
--- Dependencies: 224
 -- Data for Name: cache_locks; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -324,8 +293,6 @@ COPY public.cache_locks (key, owner, expiration) FROM stdin;
 
 
 --
--- TOC entry 4863 (class 0 OID 24642)
--- Dependencies: 229
 -- Data for Name: failed_jobs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -334,8 +301,6 @@ COPY public.failed_jobs (id, uuid, connection, queue, payload, exception, failed
 
 
 --
--- TOC entry 4861 (class 0 OID 24634)
--- Dependencies: 227
 -- Data for Name: job_batches; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -344,8 +309,6 @@ COPY public.job_batches (id, name, total_jobs, pending_jobs, failed_jobs, failed
 
 
 --
--- TOC entry 4860 (class 0 OID 24625)
--- Dependencies: 226
 -- Data for Name: jobs; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -354,8 +317,6 @@ COPY public.jobs (id, queue, payload, attempts, reserved_at, available_at, creat
 
 
 --
--- TOC entry 4852 (class 0 OID 24577)
--- Dependencies: 218
 -- Data for Name: migrations; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -367,8 +328,6 @@ COPY public.migrations (id, migration, batch) FROM stdin;
 
 
 --
--- TOC entry 4855 (class 0 OID 24594)
--- Dependencies: 221
 -- Data for Name: password_reset_tokens; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -377,8 +336,6 @@ COPY public.password_reset_tokens (email, token, created_at) FROM stdin;
 
 
 --
--- TOC entry 4856 (class 0 OID 24601)
--- Dependencies: 222
 -- Data for Name: sessions; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -388,8 +345,6 @@ AAFwvrPZRICJEyRKrxlgLb4Ygh3D2QLWY2OADYIb	1	127.0.0.1	Mozilla/5.0 (Windows NT 10.
 
 
 --
--- TOC entry 4854 (class 0 OID 24584)
--- Dependencies: 220
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
@@ -399,8 +354,6 @@ COPY public.users (id, name, email, email_verified_at, password, remember_token,
 
 
 --
--- TOC entry 4873 (class 0 OID 0)
--- Dependencies: 228
 -- Name: failed_jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -408,8 +361,6 @@ SELECT pg_catalog.setval('public.failed_jobs_id_seq', 1, false);
 
 
 --
--- TOC entry 4874 (class 0 OID 0)
--- Dependencies: 225
 -- Name: jobs_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -417,8 +368,6 @@ SELECT pg_catalog.setval('public.jobs_id_seq', 1, false);
 
 
 --
--- TOC entry 4875 (class 0 OID 0)
--- Dependencies: 217
 -- Name: migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -426,8 +375,6 @@ SELECT pg_catalog.setval('public.migrations_id_seq', 3, true);
 
 
 --
--- TOC entry 4876 (class 0 OID 0)
--- Dependencies: 219
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
@@ -435,7 +382,6 @@ SELECT pg_catalog.setval('public.users_id_seq', 1, true);
 
 
 --
--- TOC entry 4696 (class 2606 OID 24623)
 -- Name: cache_locks cache_locks_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -444,7 +390,6 @@ ALTER TABLE ONLY public.cache_locks
 
 
 --
--- TOC entry 4694 (class 2606 OID 24616)
 -- Name: cache cache_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -453,7 +398,6 @@ ALTER TABLE ONLY public.cache
 
 
 --
--- TOC entry 4703 (class 2606 OID 24650)
 -- Name: failed_jobs failed_jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -462,7 +406,6 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- TOC entry 4705 (class 2606 OID 24652)
 -- Name: failed_jobs failed_jobs_uuid_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -471,7 +414,6 @@ ALTER TABLE ONLY public.failed_jobs
 
 
 --
--- TOC entry 4701 (class 2606 OID 24640)
 -- Name: job_batches job_batches_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -480,7 +422,6 @@ ALTER TABLE ONLY public.job_batches
 
 
 --
--- TOC entry 4698 (class 2606 OID 24632)
 -- Name: jobs jobs_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -489,7 +430,6 @@ ALTER TABLE ONLY public.jobs
 
 
 --
--- TOC entry 4682 (class 2606 OID 24582)
 -- Name: migrations migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -498,7 +438,6 @@ ALTER TABLE ONLY public.migrations
 
 
 --
--- TOC entry 4688 (class 2606 OID 24600)
 -- Name: password_reset_tokens password_reset_tokens_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -507,7 +446,6 @@ ALTER TABLE ONLY public.password_reset_tokens
 
 
 --
--- TOC entry 4691 (class 2606 OID 24607)
 -- Name: sessions sessions_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -516,7 +454,6 @@ ALTER TABLE ONLY public.sessions
 
 
 --
--- TOC entry 4684 (class 2606 OID 24593)
 -- Name: users users_email_unique; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -525,7 +462,6 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 4686 (class 2606 OID 24591)
 -- Name: users users_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -534,7 +470,6 @@ ALTER TABLE ONLY public.users
 
 
 --
--- TOC entry 4699 (class 1259 OID 24633)
 -- Name: jobs_queue_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -542,7 +477,6 @@ CREATE INDEX jobs_queue_index ON public.jobs USING btree (queue);
 
 
 --
--- TOC entry 4689 (class 1259 OID 24609)
 -- Name: sessions_last_activity_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -550,18 +484,15 @@ CREATE INDEX sessions_last_activity_index ON public.sessions USING btree (last_a
 
 
 --
--- TOC entry 4692 (class 1259 OID 24608)
 -- Name: sessions_user_id_index; Type: INDEX; Schema: public; Owner: postgres
 --
 
 CREATE INDEX sessions_user_id_index ON public.sessions USING btree (user_id);
 
 
--- Completed on 2025-08-26 14:00:38
-
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict H97ueOzshHzI09CzRKmB4ZXKXAGtBMCQd49AuOskaNIvJnAVzZ5qMZiHdAk7xvJ
+\unrestrict 1W2elJfStiJzzvVY3YT9uR3oiCUIDG9dAe7LLBqlRDZ7zVQ6imjiM9eUqJb59nl
 
