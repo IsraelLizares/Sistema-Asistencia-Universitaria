@@ -330,9 +330,17 @@ return [
         [
             'text' => 'Carrera',
             'url' => 'carrera',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'icon' => 'fas fa-graduation-cap',
+        ],
+        [
+            'text' => 'Materia',
+            'url' => 'materia',
+            'icon' => 'fas fa-book',
+        ],
+        [
+            'text' => 'Estudiante',
+            'url' => 'estudiante',
+            'icon' => 'fas fa-user-graduate',
         ],
         ['header' => 'account_settings'],
         [
