@@ -396,38 +396,7 @@ php artisan db:seed --class=RolesSeeder
 
 ---
 
-## 🤝 Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/NuevaCaracteristica`)
-3. Commit tus cambios (`git commit -m 'Añade nueva característica'`)
-4. Push a la rama (`git push origin feature/NuevaCaracteristica`)
-5. Abre un Pull Request
-
----
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
----
-
 ## 👨‍💻 Desarrollado por
 
 **Israel Lizares**
 - GitHub: [@IsraelLizares](https://github.com/IsraelLizares)
-
----
-
-## 📞 Soporte
-
-Si encuentras algún problema o tienes sugerencias:
-
-- 🐛 [Reportar un bug](https://github.com/IsraelLizares/Sistema-Asistencia-Universitaria/issues)
-- 💡 [Solicitar una característica](https://github.com/IsraelLizares/Sistema-Asistencia-Universitaria/issues)
-
----
-
-<p align="center">Desarrollado con ❤️ para mejorar la gestión educativa universitaria</p>
