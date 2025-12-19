@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Control de Asistencia',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => ' - UBI',
 
     /*
     |--------------------------------------------------------------------------
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Asistencia</b>UBI',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -315,97 +315,96 @@ return [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
         ],
+
+        // 🏠 DASHBOARD
         [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'manage-blog',
+            'text' => 'Dashboard',
+            'url' => 'home',
+            'icon' => 'fas fa-tachometer-alt',
         ],
+
+        // 📊 GESTIÓN ACADÉMICA
+        ['header' => 'GESTIÓN ACADÉMICA'],
+
+        // Grupos (Admin y Docente)
         [
-            'text' => 'pages',
-            'url' => 'admin/pages',
-            'icon' => 'far fa-fw fa-file',
-            'label' => 4,
-            'label_color' => 'success',
+            'text' => 'Grupos',
+            'url' => 'grupo',
+            'icon' => 'fas fa-users-class',
+            'can' => 'gestionar-grupos',
         ],
+
+        // Inscripciones (Admin y Coordinador)
         [
-            'text' => 'Carrera',
-            'url' => 'carrera',
-            'icon' => 'fas fa-graduation-cap',
+            'text' => 'Inscripciones',
+            'url' => 'inscripcion',
+            'icon' => 'fas fa-user-plus',
+            'can' => 'gestionar-estudiantes',
         ],
+
+        // ✅ ASISTENCIAS
+        ['header' => 'ASISTENCIAS', 'can' => 'gestionar-asistencias'],
+
+        // Registrar Asistencia (Admin y Docente)
         [
-            'text' => 'Materia',
-            'url' => 'materia',
-            'icon' => 'fas fa-book',
+            'text' => 'Registrar Asistencia',
+            'url' => 'asistencia',
+            'icon' => 'fas fa-check-square',
+            'can' => 'gestionar-asistencias',
         ],
+
+        // Mi Asistencia (Solo Estudiante)
         [
-            'text' => 'Estudiante',
+            'text' => 'Mi Asistencia',
+            'url' => 'mi-asistencia',
+            'icon' => 'fas fa-calendar-check',
+            'can' => 'ver-mi-asistencia',
+        ],
+
+        // 👥 GESTIÓN DE USUARIOS
+        ['header' => 'GESTIÓN DE USUARIOS'],
+
+        // Docentes (Solo Admin)
+        [
+            'text' => 'Docentes',
+            'url' => 'docente',
+            'icon' => 'fas fa-chalkboard-teacher',
+            'can' => 'gestionar-docentes',
+        ],
+
+        // Estudiantes (Admin y Coordinador)
+        [
+            'text' => 'Estudiantes',
             'url' => 'estudiante',
             'icon' => 'fas fa-user-graduate',
+            'can' => 'gestionar-estudiantes',
         ],
-        ['header' => 'account_settings'],
+
+        // 📈 REPORTES
+        ['header' => 'REPORTES', 'can' => 'ver-reportes'],
+
         [
-            'text' => 'profile',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Reportes de Asistencia',
+            'url' => 'reportes',
+            'icon' => 'fas fa-chart-bar',
+            'can' => 'ver-reportes',
         ],
+
+        // ⚙️ CONFIGURACIÓN
+        ['header' => 'CONFIGURACIÓN'],
+
         [
-            'text' => 'change_password',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Panel Parámetros',
+            'url' => 'admin',
+            'icon' => 'fas fa-cogs',
+            'can' => 'gestionar-parametros',
         ],
+
+        ['header' => 'CUENTA'],
         [
-            'text' => 'multilevel',
-            'icon' => 'fas fa-fw fa-share',
-            'submenu' => [
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                        ],
-                        [
-                            'text' => 'level_two',
-                            'url' => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url' => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url' => '#',
-                ],
-            ],
-        ],
-        ['header' => 'labels'],
-        [
-            'text' => 'important',
-            'icon_color' => 'red',
+            'text' => 'Mi Perfil',
             'url' => '#',
-        ],
-        [
-            'text' => 'warning',
-            'icon_color' => 'yellow',
-            'url' => '#',
-        ],
-        [
-            'text' => 'information',
-            'icon_color' => 'cyan',
-            'url' => '#',
+            'icon' => 'fas fa-user',
         ],
     ],
 

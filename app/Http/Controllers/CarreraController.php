@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Carrera;
+use App\Models\ParamCarrera;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class CarreraController extends Controller
 {
@@ -21,7 +22,7 @@ class CarreraController extends Controller
 
     public function data()
     {
-        $carreras = Carrera::select('id', 'nombre', 'descripcion', 'estado')
+        $carreras = ParamCarrera::select('id', 'nombre', 'descripcion', 'estado')
             ->where('estado', true) // ✅ solo activos
             ->orderBy('id', 'desc') // ✅ orden descendente
             ->get();
@@ -41,7 +42,7 @@ class CarreraController extends Controller
         // Campos adicionales
         $data['estado'] = true; // activo por defecto
         // $data['categoria_id'] = 1; // ✅ categoría por defecto (provicional)
-        $carrera = Carrera::create($data);
+        $carrera = ParamCarrera::create($data);
         return response()->json([
             'success' => true,
             'message' => 'Carerra creado correctamente',
@@ -51,7 +52,7 @@ class CarreraController extends Controller
 
     public function show($id)
     {
-        $carrera = Carrera::select('id', 'nombre', 'descripcion')
+        $carrera = ParamCarrera::select('id', 'nombre', 'descripcion')
             ->where('estado', true)
             ->where('id', $id)
             ->first();
@@ -67,7 +68,7 @@ class CarreraController extends Controller
             // 'precio_venta' => 'required|numeric|min:0',
             'descripcion' => 'required|string|max:255',
         ]);
-        $carrera = Carrera::findOrFail($id);
+        $carrera = ParamCarrera::findOrFail($id);
         $carrera->nombre = $request->nombre;
         $carrera->descripcion = $request->descripcion;
         $carrera->save();
@@ -80,12 +81,33 @@ class CarreraController extends Controller
 
     public function destroy($id)
     {
-        $carrera = Carrera::find($id);
+        $carrera = ParamCarrera::find($id);
         if ($carrera) {
             $carrera->estado = false;
             $carrera->save();
             return response()->json(['success' => true]);
         }
         return response()->json(['success' => false]);
+    }
+
+    public function pdf()
+    {
+        $productos = ParamCarrera::from('param_carrera as carreras')
+            ->select(
+                'carreras.id',
+                'carreras.nombre_carrera',
+                'tbl_categorias.descripcion as categoria',
+                'productos.codigo_barras',
+                'productos.precio_venta',
+                'productos.cantidad_stock'
+            )
+            ->join('tbl_categorias', 'productos.categoria_id', '=', 'tbl_categorias.id')
+            ->where('productos.estado', true)
+            ->where('tbl_categorias.estado', true)
+            ->orderBy('productos.id', 'desc')
+            ->get();
+        $pdf = Pdf::loadView('reportes.productos', compact('productos'));
+        $pdf->setPaper('letter', 'portrait');
+        return $pdf->download('lista-productos-' . now()->format('d-m-Y') . '.pdf');
     }
 }

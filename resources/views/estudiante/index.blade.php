@@ -131,14 +131,12 @@
 
 @section('css')
     <link rel="stylesheet" href="https://cdn.datatables.net/2.3.4/css/dataTables.dataTables.min.css">
-    @vite('resources/css/style.css')
 @stop
 
 @section('js')
     <script src="https://cdn.datatables.net/2.3.4/js/dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    @vite('resources/js/alert.js')
     <script>
         $(function() {
             $('#idTblEstudiantes').DataTable({

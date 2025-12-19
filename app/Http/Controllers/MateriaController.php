@@ -4,14 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Materia;
-use App\Models\Carrera;
+use App\Models\ParamMateria;
+use App\Models\ParamCarrera;
 
 class MateriaController extends Controller
 {
     public function index()
     {
-        $carreras = Carrera::where('estado', true)->orderBy('nombre')->get(['id', 'nombre']);
+        $carreras = ParamCarrera::where('estado', true)->orderBy('nombre_carrera')->get(['id', 'nombre_carrera as nombre']);
         return view('materia.index', compact('carreras'));
     }
 

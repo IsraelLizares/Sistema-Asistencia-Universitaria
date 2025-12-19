@@ -45,4 +45,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    // RELACIONES
+    public function roles()
+    {
+        return $this->belongsToMany(ParamRol::class, 'user_rol', 'id_user', 'id_rol')
+            ->withPivot(['estado'])
+            ->withTimestamps();
+    }
+
+    public function estudiante()
+    {
+        return $this->hasOne(Estudiante::class, 'id_user');
+    }
+
+    public function docente()
+    {
+        return $this->hasOne(Docente::class, 'id_user');
+    }
 }

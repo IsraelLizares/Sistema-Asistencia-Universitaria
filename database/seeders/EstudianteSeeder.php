@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Estudiante;
+use App\Models\User;
+use App\Models\UserRol;
+use Illuminate\Support\Facades\Hash;
 
 class EstudianteSeeder extends Seeder
 {
@@ -81,8 +84,28 @@ class EstudianteSeeder extends Seeder
                 'estado' => true
             ],
         ];
-        foreach ($estudiantes as $estudiante) {
-            Estudiante::create($estudiante);
+
+        foreach ($estudiantes as $estudianteData) {
+            // 1. Crear usuario
+            $user = User::create([
+                'name' => $estudianteData['nombre'] . ' ' . $estudianteData['ap_paterno'],
+                'email' => $estudianteData['email'],
+                'password' => Hash::make('estudiante123'),
+            ]);
+
+            // 2. Asignar rol de Estudiante (ID 5)
+            UserRol::create([
+                'id_user' => $user->id,
+                'id_rol' => 5,
+                'estado' => 1,
+            ]);
+
+            // 3. Crear perfil de estudiante
+            Estudiante::create(array_merge($estudianteData, [
+                'id_user' => $user->id,
+            ]));
         }
+
+        $this->command->info(count($estudiantes) . ' estudiantes creados correctamente');
     }
 }
